@@ -1,17 +1,23 @@
-from fib import *
+from fib import fib1, fib2
 
 expected = [
-    (1,1),
-    (3,2),
-    (4,3),
-    (5,5),
-    (6,8),
+    (1, 1),
+    (3, 2),
+    (4, 3),
+    (5, 5),
+    (6, 8),
     (10, 55),
-    (20, 10000),
-    (50,12586269025),
+    (20, 6765),
+    (50, 12586269025),
 ]
 
-def test_fib1()->None:
-    for (n, r) in expected:
+
+def test_fib1() -> None:
+    for n, r in expected:
         if n <= 10:
             assert fib1(n) == r
+
+
+def test_fib2() -> None:
+    for n, r in expected:
+        assert fib2(n) == r
