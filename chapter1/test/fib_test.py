@@ -1,4 +1,4 @@
-from fib import fib2, fib3, fib4
+from fib import fib2, fib3, fib4, fib5
 
 expected = [
     (1, 1),
@@ -26,3 +26,8 @@ def test_fib3() -> None:
 def test_fib4() -> None:
     for n, r in expected:
         assert fib4(n) == r
+
+
+def test_fib5() -> None:
+    for n, r in expected:
+        assert fib5(n) == r

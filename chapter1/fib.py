@@ -22,3 +22,13 @@ def fib4(n: int) -> int:
     if n < 2:
         return n
     return fib4(n - 1) + fib4(n - 2)
+
+
+def fib5(n: int) -> int:
+    if n < 2:
+        return n
+    last: int = 0
+    next: int = 1
+    for _ in range(1, n):
+        last, next = next, last + next
+    return next
