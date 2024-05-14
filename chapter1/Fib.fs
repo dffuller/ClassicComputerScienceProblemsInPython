@@ -12,8 +12,8 @@ module fib =
         | n -> fib2 (n - 1) + fib2 (n - 2)
 
     let memo = new Dictionary<int, int64>()
-    memo.[0] <- int64 (0)
-    memo.[1] <- int64 (1)
+    memo[0] <- int64 (0)
+    memo[1] <- int64 (1)
 
 
     let rec fib3 (n: int) : int64 =
@@ -23,7 +23,7 @@ module fib =
         | true -> value
         | _ ->
             memo.Add(n, fib3 (n - 1) + fib3 (n - 2))
-            memo.[n]
+            memo[n]
 
     let memo2 =
         Map[(0, 0L)
@@ -36,7 +36,7 @@ module fib =
         | Some(value) -> value
         | None ->
             memo2.Add(n, fibWithMap (n - 1) + fibWithMap (n - 2)) |> ignore
-            memo2.[n]
+            memo2[n]
 
     let memoize f =
         let dict = Dictionary<_, _>()
